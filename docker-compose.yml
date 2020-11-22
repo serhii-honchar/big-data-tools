@@ -1,0 +1,68 @@
+version: "3.8"
+
+services:
+
+  zookeeper:
+    hostname: zookeeper
+    container_name: zookeeper
+    image: 'bitnami/zookeeper:latest'
+    ports:
+    - "12181:2181"
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - bigdata-network
+
+  nifi:
+    build:
+      context: ./nifi
+      dockerfile: Dockerfile
+    depends_on:
+      - zookeeper
+    ports:
+      - "30090-30092:8080"
+    environment:
+      NIFI_WEB_HTTP_PORT: 8080
+      NIFI_CLUSTER_IS_NODE: "true"
+      NIFI_CLUSTER_NODE_PROTOCOL_PORT: 8082
+      NIFI_ZK_CONNECT_STRING: zookeeper:2181
+      NIFI_ELECTION_MAX_WAIT: 1 min
+    networks:
+      - bigdata-network
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - bigdata-network
+
+  zookeeper-ui:
+    image: tobilg/zookeeper-webui:latest
+    container_name: zookeper-webui
+    depends_on:
+      - zookeeper
+    environment:
+      ZK_DEFAULT_NODE: zookeeper:2181
+      HTTP_PORT: 9090
+    ports:
+    - "18080:9090"
+    networks:
+      - bigdata-network
+
+networks:
+  bigdata-network:
+    driver: bridge
