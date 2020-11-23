@@ -26,3 +26,6 @@ Remove 'mynifi' image from local Docker registry  - run 'docker rmi ${IMAGE_ID}'
 Copy/move backup file to ./nifi/conf directory named flow.xml.gz.
 Now one can run single nifi instance or cluster with updated configuration
 
+
+## 2. KAFKA
+
