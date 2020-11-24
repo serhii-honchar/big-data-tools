@@ -1,0 +1,28 @@
+[
+  payload=
+  {
+    "data": {
+      "id": 1299786297257984,
+      "id_str": "1299786297257984",
+      "order_type": 0,
+      "datetime": "1606165614",
+      "microtimestamp": "1606165613636000",
+      "amount": 1.0866,
+      "amount_str": "1.08660000",
+      "price": 18348.3,
+      "price_str": "18348.30"
+    },
+    "channel": "live_orders_btcusd",
+    "event": "order_created"
+  },
+  headers=
+  {
+    kafka_offset=378,
+    kafka_consumer=org.apache.kafka.clients.consumer.KafkaConsumer@34b57609,
+    kafka_timestampType=CREATE_TIME,
+    kafka_receivedPartitionId=2,
+    kafka_receivedTopic=btc-transactions,
+    kafka_receivedTimestamp=1606165638688,
+    kafka_groupId=procamp-group
+  }
+]

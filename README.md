@@ -28,4 +28,4 @@ Now one can run single nifi instance or cluster with updated configuration
 
 
 ## 2. KAFKA
-
+``
