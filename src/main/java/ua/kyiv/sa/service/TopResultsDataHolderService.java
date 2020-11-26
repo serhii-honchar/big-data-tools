@@ -8,6 +8,6 @@ public interface TopResultsDataHolderService {
 
     List<TransactionEvent> getTopResults();
 
-    boolean processEvent(TransactionEvent event);
+    void processEvent(TransactionEvent event);
 
 }
