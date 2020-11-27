@@ -27,6 +27,7 @@ echo "waiting 30s for nifi running"
 sleep 30s
 
 echo "starting nifi processors"
+chmod +755 ./big-data-tools/hw/hw2/startNifiProcessors.sh
 ./big-data-tools/hw/hw2/startNifiProcessors.sh
 
 echo "application was build, enjoy reading top 10 transactions!!!"
