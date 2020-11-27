@@ -1,6 +1,6 @@
 ### HW2 DESCRIPTION
 
-####Kafka consumer setup 
+#### Kafka consumer setup 
 Application has 2 additional arguments for simplicity reasons:
 
 Argument    | Unit            | Default value   | Value description  
@@ -11,7 +11,7 @@ cron        | cron expression | "*/10 * * * * *"| writes results to console each
 These arguments can be changed in  kafka/consumerApp/buildAndRunKafkaConsumer.sh
 
 
-###Steps to check HW #2
+### Steps to check HW #2
 1) Connect to master over ssh
 ``` sh
 gcloud compute ssh procamp-cluster-m --zone=us-east1-b --project=${PROJECT_ID}
