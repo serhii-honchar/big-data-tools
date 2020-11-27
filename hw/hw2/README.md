@@ -32,9 +32,12 @@ chmod +755  big-data-tools/hw/hw2/run.sh
     
 big-data-tools/hw/hw2/run.sh
 ```
-The last one include the next scripts:
 
-4.1. Create Kafka topic
+
+
+### run.sh completes the next actions:
+
+- creates Kafka topic
 ```
 /usr/lib/kafka/bin/kafka-topics.sh \
       --create --topic btc-transactions \
@@ -43,13 +46,20 @@ The last one include the next scripts:
       --if-not-exists \
       --zookeeper procamp-cluster-m:2181
 ```
-4.2. Prepare NiFi
+- prepares NiFi 
 ```
 sudo /opt/nifi/nifi-current/bin/nifi.sh stop
 sudo cp big-data-tools/hw/hw2/flow.xml.gz /opt/nifi/nifi-current/conf/flow.xml.gz
 sudo /opt/nifi/nifi-current/bin/nifi.sh start
 ```
-4.3. Running consumer application
+
+- builds and launches consumer application
 ```
 ./big-data-tools/kafka/consumerApp/buildAndRunKafkaConsumer.sh
+```
+
+- starts all involved processors
+```
+chmod +755 ./big-data-tools/hw/hw2/startNifiProcessors.sh
+./big-data-tools/hw/hw2/startNifiProcessors.sh
 ```
