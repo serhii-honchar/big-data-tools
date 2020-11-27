@@ -23,7 +23,7 @@ sudo /opt/nifi/nifi-current/bin/nifi.sh start
 echo "run consumer application"
 mvn -f ./big-data-tools/kafka/consumerApp/pom.xml clean package
 
-echo "waiting 30s for nifi running"
+echo "waiting 30s for nifi"
 sleep 30s
 
 echo "starting nifi processors"

@@ -7,4 +7,7 @@
     <groupId>ua.kyiv.sa</groupId>
     <artifactId>bigdata-tools</artifactId>
     <version>0.0.1</version>
+    <modules>
+        <module>kafka/consumerApp</module>
+    </modules>
 </project>
