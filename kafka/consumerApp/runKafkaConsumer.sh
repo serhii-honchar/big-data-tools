@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-java -jar ./target/bigdata-tools-0.0.1-spring-boot.jar \
- --cron="*/1 * * * * *" \
+java -jar ./target/kafkaConsumer-0.0.1-spring-boot.jar \
+ --cron="*/10 * * * * *" \
+ --readRate=5000 \
  --spring.kafka.bootstrap-servers=localhost:9092 \
- --logging.level.ua.kyiv.sa.TopResultsDataHolderServiceImpl=INFO \
  --logging.level.root=ERROR \
  --logging.level=ERROR
 

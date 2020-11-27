@@ -25,9 +25,9 @@ public class TopResultsDataHolderServiceImpl implements TopResultsDataHolderServ
     private static final AtomicLong TOTAL_MESSAGES_COUNT = new AtomicLong(0);
     private static final AtomicLong LAST_LEG_MESSAGES_COUNT = new AtomicLong(0);
     private static final String MESSAGE_PATTERN = "\n#####################\n" +
-            "Total messages count = {}\n" +
-            "Messages processed during last period = {}\n" +
-            "Top 10 transations:\n{}\n" +
+            "Total messages count = %s\n" +
+            "Messages processed during last period = %s\n" +
+            "Top 10 transations:\n%s\n" +
             "#####################\n";
 
     @Override
@@ -58,7 +58,7 @@ public class TopResultsDataHolderServiceImpl implements TopResultsDataHolderServ
         //log top events
         String topTransactions = TOP_TRANSACTIONS.stream().sorted(PRICE_COMPARATOR_REV)
                 .map(TransactionEvent::toString).collect(joining("\n"));
-        log.info(MESSAGE_PATTERN, TOTAL_MESSAGES_COUNT.get(), LAST_LEG_MESSAGES_COUNT.get(), topTransactions);
+        System.out.println(String.format(MESSAGE_PATTERN, TOTAL_MESSAGES_COUNT.get(), LAST_LEG_MESSAGES_COUNT.get(), topTransactions));
 
         //reset counter of messages processed during last leg
         LAST_LEG_MESSAGES_COUNT.set(0);

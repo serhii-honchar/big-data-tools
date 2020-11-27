@@ -23,8 +23,5 @@
 hs_err_pid*
 
 /.idea/
-/nifi/dump
 /target
-/kafka/consumerApp/target
-/kafka/consumerApp/.gitignore
-
+bigdata-tools (1).iml

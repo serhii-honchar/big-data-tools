@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ua.kyiv.sa</groupId>
-    <artifactId>bigdata-tools</artifactId>
+    <artifactId>kafkaConsumer</artifactId>
     <version>0.0.1</version>
 
     <dependencies>

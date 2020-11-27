@@ -3,6 +3,7 @@ package ua.kyiv.sa.listener;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -26,6 +27,8 @@ public class MessageListener {
 
     @Autowired
     private TopResultsDataHolderService topResultsDataHolderServiceImpl;
+    @Value("${readRate:1000L}")
+    private Long readRate;
 
     @KafkaListener(topics = {"btc-transactions"},
             groupId = "procamp-group",
@@ -45,7 +48,9 @@ public class MessageListener {
 
         if (valid) {
             //process valid message
-            Thread.sleep(1000L);
+            if(readRate>0){
+                Thread.sleep(readRate);
+            }
             topResultsDataHolderServiceImpl.processEvent(message);
         }
 
