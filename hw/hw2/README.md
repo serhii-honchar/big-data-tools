@@ -1,6 +1,6 @@
-### HW2 DESCRIPTION
+## HW2 DESCRIPTION
 
-#### Kafka consumer setup 
+### Kafka consumer setup 
 Application has 2 additional arguments for simplicity reasons:
 
 Argument    | Unit            | Default value   | Value description  
@@ -26,7 +26,15 @@ sudo apt install maven -y
 ```sh
 git clone https://github.com/serhii-honchar/big-data-tools.git
 ```
-4) Create Kafka topic
+4) Execute the next scripts:
+```   
+chmod +755  big-data-tools/hw/hw2/run.sh
+    
+big-data-tools/hw/hw2/run.sh
+```
+The last one include the next scripts:
+
+4.1. Create Kafka topic
 ```
 /usr/lib/kafka/bin/kafka-topics.sh \
       --create --topic btc-transactions \
@@ -35,14 +43,13 @@ git clone https://github.com/serhii-honchar/big-data-tools.git
       --if-not-exists \
       --zookeeper procamp-cluster-m:2181
 ```
-5) Prepare NiFi
+4.2. Prepare NiFi
 ```
 sudo /opt/nifi/nifi-current/bin/nifi.sh stop
 sudo cp big-data-tools/hw/hw2/flow.xml.gz /opt/nifi/nifi-current/conf/flow.xml.gz
 sudo /opt/nifi/nifi-current/bin/nifi.sh start
 ```
-6) Run consumer application
+4.3. Running consumer application
 ```
-mvn -f ./big-data-tools/kafka/consumerApp/pom.xml clean install
 ./big-data-tools/kafka/consumerApp/buildAndRunKafkaConsumer.sh
 ```
