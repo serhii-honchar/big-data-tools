@@ -24,4 +24,4 @@ echo "run consumer application"
 mvn -f ./big-data-tools/kafka/consumerApp/pom.xml clean package
 
 echo "application was build, enjoy reading top 10 transactions!!!"
-./big-data-tools/kafka/consumerApp/buildAndRunKafkaConsumer.sh
+./big-data-tools/kafka/consumerApp/runKafkaConsumer.sh
