@@ -24,3 +24,6 @@ hs_err_pid*
 
 /.idea/
 /nifi/dump
+/target
+/kafka/consumerApp/target
+

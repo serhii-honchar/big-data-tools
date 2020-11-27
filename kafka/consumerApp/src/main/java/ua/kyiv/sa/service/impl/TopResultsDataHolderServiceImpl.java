@@ -1,6 +1,7 @@
 package ua.kyiv.sa.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import ua.kyiv.sa.model.TransactionEvent;
@@ -52,7 +53,7 @@ public class TopResultsDataHolderServiceImpl implements TopResultsDataHolderServ
 
 
     //print actual results every 10 seconds
-    @Scheduled(fixedRate = 10000L)
+    @Scheduled(cron = "${cron:*/10 * * * * *}")
     private void printCurrentResults() {
         //log top events
         String topTransactions = TOP_TRANSACTIONS.stream().sorted(PRICE_COMPARATOR_REV)
