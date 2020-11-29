@@ -6,8 +6,10 @@
 
     <groupId>ua.kyiv.sa</groupId>
     <artifactId>bigdata-tools</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1</version>
     <modules>
         <module>kafka/consumerApp</module>
+        <module>hadoop/flight-delays</module>
     </modules>
 </project>
