@@ -27,4 +27,6 @@ hs_err_pid*
 /target
 /kafka/consumerApp/target
 /kafka/consumerApp/.gitignore
+/hadoop/flight-delays/target
+/hadoop/flight-delays/flight-delays.iml
 
