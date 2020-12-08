@@ -29,4 +29,7 @@ hs_err_pid*
 /kafka/consumerApp/.gitignore
 /hadoop/flight-delays/target
 /hadoop/flight-delays/flight-delays.iml
+/hive/flights-hive-app/.mvn
+/hive/flights-hive-app/mvnw
+/hive/flights-hive-app/mvnw.cmd
 

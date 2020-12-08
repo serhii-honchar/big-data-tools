@@ -11,5 +11,6 @@
     <modules>
         <module>kafka/consumerApp</module>
         <module>hadoop/flight-delays</module>
+        <module>hive/flights-hive-app</module>
     </modules>
 </project>
