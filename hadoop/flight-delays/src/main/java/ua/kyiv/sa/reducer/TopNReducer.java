@@ -67,6 +67,7 @@ public class TopNReducer extends Reducer<Text, Text, NullWritable, AirlineDelayS
                         });
             } catch (Exception e) {
                 System.out.println("Unable to read the file " + cacheFiles[0]);
+
                 System.exit(1);
             }
         }

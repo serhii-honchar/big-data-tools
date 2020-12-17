@@ -16,6 +16,9 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor
 public class AirlineDelayStatsResult implements Writable, Comparable<AirlineDelayStatsResult>, Serializable {
+
+    // GLC| As I can see there is no need to use writables as field members just plain java String is good
+    // Writables are needed when you use them as map/reduce outputs
     private Text avgDelayTime=new Text();
     private Text airlineCode=new Text();
     private Text airlineName=new Text();

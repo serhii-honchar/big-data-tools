@@ -37,7 +37,7 @@ public class AirlinesWithGreatestAvgDelaysCalculator {
 
         job.setReducerClass(AirlinesDelaysReducer.class);
         job.setNumReduceTasks(1);
-
+        // GLC: It's worth adding a combiner but you cannot reuse AirlinesDelaysReducer unless you modify it
         FileInputFormat.addInputPath(job, new Path(args[1]));
         job.setMapperClass(AirlinesDelaysMapper.class);
         job.setMapOutputKeyClass(Text.class);
@@ -49,6 +49,14 @@ public class AirlinesWithGreatestAvgDelaysCalculator {
 
         FileOutputFormat.setOutputPath(job, new Path(temporaryOutputFolder));
         conf.set("NR_OF_RESULTS", args[4] != null ? args[4] : "5");
+
+        // It's worth playing with compression
+        // http://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
+        // GLC: mapreduce.map.output.compress [false]	Should the outputs of the maps be compressed before being sent across the network. Uses SequenceFile compression.
+        // GLC: mapreduce.map.output.compress.codec[org.apache.hadoop.io.compress.DefaultCodec]	If the map outputs are compressed, how should they be compressed?
+        // GLC: conf.set("mapreduce.map.output.compress", true)
+        // GLC: FileOutputFormat.setCompressOutput();
+        // GLC: FileOutputFormat.setOutputCompressorClass(job, COMP_CLASS.class);
 
         int code = job.waitForCompletion(true) ? 0 : 1;
 
