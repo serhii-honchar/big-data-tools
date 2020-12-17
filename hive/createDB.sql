@@ -1,3 +1,5 @@
+-- GLC| Great job!
+
 //create tables to store data from hdfs
 CREATE TABLE IF NOT EXISTS flights
 (
@@ -226,6 +228,7 @@ FROM flights;
 
 
 //select to the regular table with inefficient join
+-- GLC| Have you tried w/o join to estimate aggregation performance?
 select f.airline              `IATA CODE`,
        a.AIRLINE              `AIRLINE`,
        avg(f.departure_delay) `Average Delay`
@@ -265,6 +268,7 @@ from (select f.airline              IATA_CODE,
       order by Average_Delay desc
       limit 5) top5DelayedFlights
          join airlines a on top5DelayedFlights.IATA_CODE = a.IATA_CODE
+-- GLC| Have you tried w/o another order?
 order by `Average Delay` desc;
 
 
