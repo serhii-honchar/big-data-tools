@@ -1,0 +1,1 @@
+/opt/conda/default/bin/python ../../spark/rdd/python/lab1.py hdfs:///bdpc/hadoop_mr/flight-delays/flights.csv hdfs:///bdpc/hadoop_mr/flight-delays/airports.csv hdfs:///bdpc/spark/output/result.tsv
