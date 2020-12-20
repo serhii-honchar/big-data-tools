@@ -33,4 +33,5 @@ hs_err_pid*
 /hive/flights-hive-app/.mvn
 /hive/flights-hive-app/mvnw
 /hive/flights-hive-app/mvnw.cmd
+/spark/rdd/python/PySpark.iml
 

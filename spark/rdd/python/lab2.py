@@ -37,40 +37,6 @@ def read_airlines():
     return airlines_parsed.collectAsMap()
 
 
-def get_elem(a):
-    return a
-
-
-def append(a, b):
-    if a[1] > b[1]:
-        return a
-    elif a[1] < b[1]:
-        return b
-    else:
-        return a
-
-
-def extend(a, b):
-    if a[1] > b[1]:
-        return a
-    elif a[1] < b[1]:
-        return b
-    else:
-        return a
-
-
-def process_result(x):
-    if x[1] == 'Waco Regional Airport':
-        return x[0] + "," + x[1] + "," + x[2] + "," + x[3] + "," + x[4]
-    else:
-        return ("{" + "\"airline\":" + x[0] +
-                ",\"airport\":" + x[1] +
-                ",\"cancelledPercentage\":" + x[2] +
-                ",\"cancelledFlights\":" + x[3] +
-                ",\"totalFlights\":" + x[4] +
-                "}")
-
-
 if __name__ == "__main__":
     # configure spark context
     conf = SparkConf().setAppName(APP_NAME)
