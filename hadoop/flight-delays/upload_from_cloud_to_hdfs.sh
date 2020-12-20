@@ -3,16 +3,18 @@ usage() {
        "where\n"\
        "-f defines a path with flights.csv file, default - gs://procamp_hadoop/flight-delays/flights.csv\n"\
        "-a defines a path with airlines.csv file, default - gs://procamp_hadoop/flight-delays/airlines.csv\n"\
+       "-p defines a path with airports.csv file, default - gs://procamp_hadoop/flight-delays/airports.csv\n"\
        "-d defines an hdfs destination path, default - /bdpc/hadoop_mr/flight-delays\n"\
        "\n"\
         1>&2
   exit 1
 }
 
-while getopts ":a:f:d:" opt; do
+while getopts ":a:f:p:d:" opt; do
     case "$opt" in
         a)  AIRLINES_PATH=${OPTARG} ;;
         f)  FLIGHTS_PATH=${OPTARG} ;;
+        p)  AIRPORTS_PATH=${OPTARG} ;;
         d)  HDFS_PATH=${OPTARG} ;;
         *)  usage ;;
     esac
@@ -21,6 +23,11 @@ done
 if [[ -z "$AIRLINES_PATH" ]];
 then
   AIRLINES_PATH="gs://procamp_hadoop/flight-delays/airlines.csv"
+fi
+
+if [[ -z "$AIRPORTS_PATH" ]];
+then
+  AIRPORTS_PATH="gs://procamp_hadoop/flight-delays/airports.csv"
 fi
 
 if [[ -z "$FLIGHTS_PATH" ]];
@@ -48,11 +55,12 @@ echo "BASE_PATH = $BASE_PATH"
 echo "-------------------------------------"
 echo "FLIGHTS_PATH = $FLIGHTS_PATH"
 echo "AIRLINES_PATH = $AIRLINES_PATH"
+echo "AIRPORTS_PATH = $AIRPORTS_PATH"
 echo "HDFS_PATH = $HDFS_PATH"
 echo "-------------------------------------"
 
 
-SUBMIT_CMD="hdfs dfs -cp ${AIRLINES_PATH} ${FLIGHTS_PATH} ${HDFS_PATH}"
+SUBMIT_CMD="hdfs dfs -cp ${AIRLINES_PATH} ${AIRPORTS_PATH} ${FLIGHTS_PATH} ${HDFS_PATH}"
 echo "$SUBMIT_CMD"
 ${SUBMIT_CMD}
 
