@@ -1,7 +1,7 @@
 import sys
 from operator import add
 
-from pyspark import SparkConf, SparkContext, AccumulatorParam
+from pyspark import SparkConf, SparkContext
 
 APP_NAME = "DEST_AIRPORTS_STATS_APP"
 

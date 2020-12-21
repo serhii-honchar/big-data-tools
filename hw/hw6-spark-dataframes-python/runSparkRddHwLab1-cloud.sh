@@ -1,0 +1,1 @@
+/opt/conda/default/bin/python ../../spark/dataframes/python-dataframes/lab1.py /home/serhio/IdeaProjects/bigdata-tools/common-files/datasets/flights.csv /home/serhio/IdeaProjects/bigdata-tools/common-files/datasets/airports.csv hdfs:///bdpc/spark/output/result.tsv
