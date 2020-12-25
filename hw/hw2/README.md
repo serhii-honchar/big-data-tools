@@ -5,7 +5,7 @@ Application has 2 additional arguments for simplicity reasons:
 
 Argument    | Unit            | Default value   | Value description  
 ------------|-----------------|-----------------|---------------
-readRate    | milliseconds    | 5000            | reads from broker brocker each 5 secs 
+readRate    | milliseconds    | 5000            | reads from broker broker each 5 secs 
 cron        | cron expression | "*/10 * * * * *"| writes results to console each 10 secs           
 
 These arguments can be changed in  kafka/consumerApp/buildAndRunKafkaConsumer.sh

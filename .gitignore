@@ -35,4 +35,5 @@ hs_err_pid*
 /hive/flights-hive-app/mvnw.cmd
 /spark/rdd/python/PySpark.iml
 /spark/dataframes/python-dataframes/python-dataframes.iml
+/spark/streaming/pyspark-streaming/pyspark-streaming.iml
 
