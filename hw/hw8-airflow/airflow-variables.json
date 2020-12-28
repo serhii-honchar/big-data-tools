@@ -1,0 +1,9 @@
+{
+  "airlines_dataset": "gs://procamp_hadoop/flight-delays/airlines.csv",
+  "airports_dataset": "gs://procamp_hadoop/flight-delays/airports.csv",
+  "flights_dataset": "gs://procamp_hadoop/flight-delays/flights.csv",
+  "gce_zone": "us-east4-a",
+  "gcp_project": "bigdata-procamp-fdb1db6e",
+  "gcs_bucket": "airflow-task",
+  "pyspark_program": "gs://airflow-task/spark/lab1-1-with-partitions.py"
+}
