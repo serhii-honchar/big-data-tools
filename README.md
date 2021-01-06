@@ -1,31 +1,62 @@
 # big-data-tools
 
+## Ingestion tools
 ## 1. NIFI
-
-#### 1.1. RUNNING NIFI CLUSTER
-
-To start a nifi cluster, run 'createInfrastructure.sh' in the project root directory. 
-By default nifi containers will be available on the range of ports from 30090 to 30092.
-To destroy nifi cluster and remove all containers, run 'destroyInfrastructure.sh' located in the root directory of the project
- 
- 
-##### 1.2. RUNNING A SINGLE NIFI INSTANSE
-
-If one needs to launch a single nifi instance, it's required to run 'run.sh' file located in ./nifi folder.   
+## 2. Sqoop
+## 3. Flume
+## 4. 
+## 5.
 
 
-#### 1.3. BACKUP NIFI CONFIGURATION
-
-Launch 'backupFlowFile.sh' to backup flow.xml.gz from running container.
-It copies the mentioned file to ./nifi/dump folder and adds suffix with current timestamp
-
-
-#### 1.4. RESTORE NIFI CONFIGURATION
-
-Remove 'mynifi' image from local Docker registry  - run 'docker rmi ${IMAGE_ID}' 
-Copy/move backup file to ./nifi/conf directory named flow.xml.gz.
-Now one can run single nifi instance or cluster with updated configuration
+## Formats: 
+1. JSON
+2. Avro
+3. Parquet
 
 
-## 2. KAFKA
-``
+## Messaging
+
+### 1. KAFKA
+### 2. Google Pub/Sub
+### 3. Apache Storm
+
+
+## Distributed Filesystem
+### 1. HADOOP
+### 2. GCS
+### 3. 
+
+
+SQL on Hadoop
+## 1. Hadoop MapReduce
+## 2. Hive
+## 3. Drill
+
+##Sripting on Hadoop
+### 1. PIG
+
+## NoSQL Storage
+### 1. HBASE
+### 2. Casandra
+### 3. BigTable
+### 4. BigQuery
+
+
+## Streaming
+### 1. Spark
+### 2. Apache Beam
+### 3. 
+
+## Secondary index
+### 1. Lucene
+### 2. Solr
+### 3. ElasticSearch
+
+## Orchestration
+### 1. Airflow
+### 2. Oozzie
+
+## Cluster coordinator
+### 1. Zookeeper
+### 2. Ambari
+
