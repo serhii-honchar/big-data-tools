@@ -109,6 +109,7 @@ Data blocks:
 - the block prefix and sync mark allow data to be efficiently skipped during HDFS mapred splits and other similar processing
 - corrupt blocks can be detected
 
+![File structure](img/avro_file.png)
 
 ### Avro Schema resolution rules 
 ![Schema resolution rules](img/avro_schema_resolution_rules.png)
