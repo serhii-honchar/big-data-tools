@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import ua.kyiv.sa.service.FlightsService;
 
+// GLC| Don't quite understand the use-case senarious of the tool
+
 @SpringBootApplication
 public class FlightsHiveApplication {
 
