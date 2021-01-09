@@ -82,17 +82,17 @@ resource "google_dataproc_cluster" "procamp_cluster" {
     }
 
     initialization_action {
-      script      = "https://storage.googleapis.com/bigdata-tools/nifi/nifi.sh"
+      script      = "gs://bigdata-tools/nifi/nifi.sh"
       timeout_sec = 600
     }
 
     initialization_action {
-      script      = "https://storage.googleapis.com/bigdata-tools/sqoop/sqoop.sh"
+      script      = "gs://bigdata-tools/sqoop/sqoop.sh"
       timeout_sec = 600
     }
 
     initialization_action {
-      script      = "https://storage.googleapis.com/bigdata-tools/bigdata-tools/tools.sh"
+      script      = "gs://bigdata-tools/bigdata-tools/tools.sh"
       timeout_sec = 600
     }
 
