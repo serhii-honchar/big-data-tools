@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 BIGDATA_TOOLS_DIR=/opt/bigdata-tools
-BITSTAMP_TRUSTSTORE_URL="https://storage.googleapis.com/bigdata-tools/initialization-actions/bigdata-tools/bitstamp.truststore"
+BITSTAMP_TRUSTSTORE_URL="https://storage.googleapis.com/bigdata-tools/bigdata-tools/bitstamp.truststore"
 
 function install_and_configure() {
     mkdir ${BIGDATA_TOOLS_DIR}
